@@ -1,5 +1,6 @@
-# LearningUnity ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white)
-![image](https://github.com/spectrummmm/LearningUnity/assets/133951457/c90ef633-98bb-4ab5-a814-55afd7046416)
+# LearningWindowsForms ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![image](https://github.com/spectrummmm/LearningWindowsForms/assets/133951457/78f767be-110e-405e-a09f-0b33e585c542)
+
 ## Актуальность
 В курсе обучения программированию я изучил основы работы в ***Unity***. <p>***Юнити*** представляет из себя среду разработки кроссплатформенных приложений и игр. В наше время огромное количество игр сделано на ***Unity*** : ***Firewatch ; Ori and the Blind Forest ; Cuphead ; и так далее...***.
 </p>
