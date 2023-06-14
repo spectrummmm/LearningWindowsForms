@@ -21,21 +21,14 @@
  
 
  Потом я создал каждой кнопке собственное событие : при нажатии на кнопку ***"+"***,  число, записанное в окно кидается в буфер, и окно очищается. Аналогично сделал для других кнопок.
- ``` private: System::Void buttonPlus_Click(System::Object^ sender, System::EventArgs^ e) {
+ ```cpp
+	private: System::Void buttonPlus_Click(System::Object^ sender, System::EventArgs^ e) {
 	number1 = Convert::ToInt32(textResult->Text);
 	operation = "+";
 	textResult->Clear();
-}
-private: System::Void buttonDivide_Click(System::Object^ sender, System::EventArgs^ e) {
-	number1 = Convert::ToInt32(textResult->Text);
-	operation = "/";
-	textResult->Clear();
-}
-private: System::Void buttonMinus_Click(System::Object^ sender, System::EventArgs^ e) {
-	number1 = Convert::ToInt32(textResult->Text);
-	operation = "-";
-	textResult->Clear();
-}
+```
+А тут реализован вывод текста
+```cpp
 private: System::Void buttonEqual_Click(System::Object^ sender, System::EventArgs^ e) {
 	number2 = Convert::ToInt32(textResult->Text);
 	textResult->Clear();
@@ -48,7 +41,7 @@ private: System::Void buttonEqual_Click(System::Object^ sender, System::EventArg
 
  ***Кстати введённые данные проверяются на то , числа ли они ( если ввести текст, то приложение выдаст ошибку )***
  
- ```
+ ```cpp
  private: System::Void textResult_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if ((e->KeyValue) < 48 || e->KeyValue > 59) {
 		textResult->Text = str;
