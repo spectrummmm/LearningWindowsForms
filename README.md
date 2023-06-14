@@ -20,10 +20,43 @@
 <Img src="https://github.com/spectrummmm/LearningWindowsForms/assets/133951457/8557dd3b-e059-422a-81d4-7c7b64a330ff" vertical-align: bottom>
  
 
- Потом я создал каждой кнопке собственное событие : при нажатии на кнопку ***"+"***,  число, записанное в окно кидается в буфер, и окно очищается. Аналогично сделал для других кнопок. Затем мы вводим второе число в окно и нажимаем ***"="*** (при этом достаётся первое число из буфера и выполняется та или иная операция). Полученный результат мы выводим опять в **textbox** .
+ Потом я создал каждой кнопке собственное событие : при нажатии на кнопку ***"+"***,  число, записанное в окно кидается в буфер, и окно очищается. Аналогично сделал для других кнопок.
+ ``` private: System::Void buttonPlus_Click(System::Object^ sender, System::EventArgs^ e) {
+	number1 = Convert::ToInt32(textResult->Text);
+	operation = "+";
+	textResult->Clear();
+}
+private: System::Void buttonDivide_Click(System::Object^ sender, System::EventArgs^ e) {
+	number1 = Convert::ToInt32(textResult->Text);
+	operation = "/";
+	textResult->Clear();
+}
+private: System::Void buttonMinus_Click(System::Object^ sender, System::EventArgs^ e) {
+	number1 = Convert::ToInt32(textResult->Text);
+	operation = "-";
+	textResult->Clear();
+}
+private: System::Void buttonEqual_Click(System::Object^ sender, System::EventArgs^ e) {
+	number2 = Convert::ToInt32(textResult->Text);
+	textResult->Clear();
+	if (operation == "+") textResult->Text = Convert::ToString(number1 + number2);
+	if (operation == "-") textResult->Text = Convert::ToString(number1 - number2);
+	if (operation == "*") textResult->Text = Convert::ToString(number1 * number2);
+	if (operation == "/") textResult->Text = Convert::ToString(number1 / number2);
+ ```
+ Затем мы вводим второе число в окно и нажимаем ***"="*** (при этом достаётся первое число из буфера и выполняется та или иная операция). Полученный результат мы выводим опять в **textbox** .
 
- <p> Кстати введённые данные проверяются на то , числа ли они ( если ввести текст, то приложение выдаст ошибку )
- </p>
+ ***Кстати введённые данные проверяются на то , числа ли они ( если ввести текст, то приложение выдаст ошибку )***
+ 
+ ```
+ private: System::Void textResult_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if ((e->KeyValue) < 48 || e->KeyValue > 59) {
+		textResult->Text = str;
+	}
+}
+```
+
+ **Ну и финальный вид калькулятора:**
  
  ![image](https://github.com/spectrummmm/LearningWindowsForms/assets/133951457/bfeb0292-51d7-487a-acec-82d0dad26905)
 
